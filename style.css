@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oi&display=swap');
+
+:root {
+    --base-color: #ffffff;
+    --text-color: #000000;
+    --primary-color: #ffc063;
+    --secondary-color: #8d8dff;
+    --color-1: #f9f6f3;
+    --color-2: #f3f7f9;
+    --color-3: #f6f3f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Luckiest Guy', 'Merriweather', serif;
+    color: var(--text-color);
+    background-color: var(--base-color);
+}
+
+body {
+    width: min(80em, calc(100% - 2em));
+    margin: 2em auto;
+    padding: 1em;
+    background-color: var(--color-1);
+    border-radius: 1em;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Merriweather', serif;
+}
+
+nav {
+    width: min(1000px, 100%);
+    margin: 1em auto 3em;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2em;
+    list-style: none;
+}
+
+nav li:first-child {
+    margin-right: auto;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+header, section {
+    margin: 2em auto;
+    width: min(75em, 100%);
+    padding: min(2em, 15%);
+    border-radius: 1em;
+}
+
+footer {
+    margin: 2em auto;
+    width: min(75em, 100%);
+    padding: min(2em, 15%);
+    border-radius: 1em;
+    background-color: var(--color-2);
+}
+
+.flex-container {
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 3em;
+}
+
+header img {
+    max-width: 100%;
+    border-radius: 1em;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+.text-container {
+    flex: 0 1 34em;
+}
+
+.text-container p {
+     margin: .75em 0 1em 0;
+     font-size: 1.25rem;
+}
+
+.cta-button {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: var(--primary-color);
+    padding: .75em 1.5em;
+    border-radius: .5em;
+    font-weight: 600;
+}
+
+section {
+    padding: 3em min(2em, 15%);
+    background-color: var(--color-2);
+}
