@@ -185,7 +185,7 @@ details {
 details summary{
     padding: 1em;
     font-size: 1.7rem;
-    font-family: 'marriwether', serif;
+    font-family: 'Merriweather', serif;
 }
 
 details p {
@@ -325,7 +325,7 @@ nav {
 
     .reveal, nav {
         transition: none !important;
-        
+
         animation: none !important;
         opacity: 1 !important;
 
