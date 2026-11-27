@@ -176,3 +176,161 @@ section#gallery {
 .grid-container img:hover {
     scale: 1.05;
 }
+
+details {
+    margin-top: 1em;
+    background-color: var(--base-color);
+}
+
+details summary{
+    padding: 1em;
+    font-size: 1.7rem;
+    font-family: 'marriwether', serif;
+}
+
+details p {
+    padding: 0 2em 2em 2em;
+}
+
+footer {
+    padding-bottom: 1.5em;
+    text-align: center;
+}
+
+footer a {
+    margin: 0 1em;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media(max-width: 988px) {
+    header{
+        text-align: center;
+    }
+
+    header .text-container {
+        padding-top: 0;
+    }
+}
+
+@media(max-width: 640px) {
+    nav li {
+        display: none;
+    }
+
+    nav li:first-child,
+    nav li:last-child {
+        display: block;
+    }
+
+    header {
+        margin-top: 0;
+    }
+
+    .cta-button {
+        margin-top: .5em;
+        width: 100%;
+    }
+
+    .grid-container {
+       display: flex;
+       flex-direction: column;
+    }
+
+    .text-container p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+:root {
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+
+
+    filter: blur(8px);
+
+    transition:
+        opacity 0.9s var(--ease),
+
+
+        transform 0.9s var(--ease),
+        filter 0.9s var(--ease);
+    transition-delay: calc(var(--i, 0) * 90ms);
+
+    will-change: opacity, transform;
+}
+
+.reveal.from-left  { transform: translateX(-80px) scale(0.96); }
+
+.reveal.from-right { transform: translateX(80px) scale(0.96); }
+
+.reveal.pop        { transform: translateY(60px) scale(0.8) rotate(-3deg); }
+.reveal.section-in {
+    transform: translateY(80px);
+    filter: none;
+    transition-duration: 1.2s;
+}
+
+
+.reveal.in-view {
+    opacity: 1;
+
+    transform: none;
+    filter: none;
+}
+
+
+        transform 1s var(--ease) calc(var(--i, 0) * 90ms),
+        filter 1s var(--ease) calc(var(--i, 0) * 90ms),
+        scale 150ms ease;
+}
+
+
+nav {
+    animation: nav-drop 1s var(--ease) both;
+}
+
+@keyframes nav-drop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+
+    .reveal, nav {
+        transition: none !important;
+        
+        animation: none !important;
+        opacity: 1 !important;
+
+
+        transform: none !important;
+        filter: none !important;
+    }
+}

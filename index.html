@@ -4,7 +4,7 @@
 		<link rel="stylesheet" href="style.css">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Larry World </title>
+		<title>Larry World</title>
 	</head>
 	<body style="min-height: 100vh; display: flex; flex-direction: column; margin: 0;">
 		<header style="flex: 1 0 auto;">
@@ -20,8 +20,8 @@
 		<div class="text-container">
 			<h1>Larry World</h1>
 			<h3>hi, i'm larry.</h3>
-			<p>wsg.</p>
 			<a href="https://share.google/jya2GGBpd4KIJcuLg" class="cta-button">Click Me</a>
+			<a href="#gallery" class="cta-button">Gallery</a>
 		</div>
 		</div>
 		</header>
@@ -52,7 +52,7 @@
 			<h2>Common Questions</h2>
 			<details>
 				<summary>Why am I Evil</summary>
-				<p>After the dead of his father he turned extremly evil. It was because of two things:
+				<p>After the death of his father larry turned extremly evil. It was because of two things:
 				1.Larrys father did some experiments on him
 				2.He liked his father</p>
 			</details>
@@ -72,10 +72,68 @@
 			</details>
 		</section>
 
-		 <footer id="Contact-me" style="margin-top: 2rem; padding: 1.5rem; background: #f2f2f2; border: 1px solid #ccc; border-radius: 8px;">
+	<footer>
     <p>&copy; 2026 Larry. No rights reserved.</p>
-			<a href="https://share.google/jya2GGBpd4KIJcuLg" class="cta-button">Contact</a>
+	<a href="https://share.google/jya2GGBpd4KIJcuLg" class="cta-button">Contact Me</a>
   </footer>
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const items = [];
+
+   
+    const tag = (selector, variant) => {
+        document.querySelectorAll(selector).forEach(el => {
+            el.classList.add('reveal');
+
+            if (variant) el.classList.add(variant);
+            items.push(el);
+        });
+    };
+
+    
+    tag('section', 'section-in');
+    tag('footer', 'section-in');
+
+
   
-	</body>
+    tag('header img', 'from-left');
+
+    tag('header .text-container > *');
+    tag('section .flex-container > img', 'from-right');
+    tag('section .text-container > *');
+    tag('section > h2');
+    tag('.grid-container img', 'pop');
+
+    tag('#gallery > .cta-button');
+    tag('details');
+    tag('footer p');
+    tag('footer a');
+
+   
+    items.forEach(el => {
+        const parent = el.parentElement;
+        if (parent === document.body) return;
+
+        const siblings = [...parent.children].filter(c => c.classList.contains('reveal'));
+        el.style.setProperty('--i', Math.min(siblings.indexOf(el), 6));
+    });
+
+   
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+
+				
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+    items.forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
 </html>
