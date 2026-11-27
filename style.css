@@ -334,3 +334,8 @@ nav {
         filter: none !important;
     }
 }
+
+::selection { background: var(--primary-color); color: white; }
+
+header img { animation: float 4s ease-in-out infinite; }
+@keyframes float { 50% { translate: 0 -12px; } }
